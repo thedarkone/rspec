@@ -186,7 +186,7 @@ module Spec
         return false unless is_drb
         @options.examples_should_not_be_run
         DrbCommandLine.run(
-          self.class.parse(argv, @error_stream, @out_stream)
+          self.class.parse((@options.files + argv), @error_stream, @out_stream)
         )
         true
       end
